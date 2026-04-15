@@ -1,0 +1,14 @@
+texto = input("Ingresa la palabra cifrada: ").upper()
+alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+for shift in range(26):
+    resultado = ""
+
+    for letra in texto:
+        if letra in alfabeto:
+            indice = alfabeto.index(letra)
+            resultado += alfabeto[(indice - shift) % 26]
+        else:
+            resultado += letra
+
+    print(f"Shift {shift}: {resultado}")
